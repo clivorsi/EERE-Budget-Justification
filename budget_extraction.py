@@ -492,8 +492,8 @@ def extract_budget_data(data_directory, archive_directory,server_name,database_n
 
         #Export data to SQL
         # parameters
-        DB = {'servername': str(server_name),
-              'database': str(database_name),
+        DB = {'servername': server_name,
+              'database': database_name,
               'driver': 'driver=SQL Server Native Client 11.0'}
 
         # create the connection
