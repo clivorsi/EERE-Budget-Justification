@@ -9,4 +9,4 @@ archive_directory = 'C:\DOE Project\Archive\\'
 server_name = 'localhost\SQLEXPRESS'
 database_name = 'Budget'
 
-extract_budget_data(data_directory,archive_directory)
+extract_budget_data(data_directory,archive_directory,server_name,database_name)
