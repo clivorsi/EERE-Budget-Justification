@@ -5,7 +5,8 @@ import os
 from sqlalchemy import create_engine
 import numpy as np
 
-def extract_budget_data(data_directory, archive_directory):
+def extract_budget_data(data_directory, archive_directory,server_name,database_name):
+    """Stores data from DOE EERE Budget Justfication into SQL Server Database"""
     os.listdir(data_directory)
     excel = np.array([data_directory + '\\' + filename for filename in os.listdir(data_directory) if filename.endswith(".xlsx")])
     for i in excel:
@@ -491,8 +492,8 @@ def extract_budget_data(data_directory, archive_directory):
 
         #Export data to SQL
         # parameters
-        DB = {'servername': 'DESKTOP-2VHPL77\SQLEXPRESS',
-              'database': 'Budget',
+        DB = {'servername': str(server_name),
+              'database': str(database_name),
               'driver': 'driver=SQL Server Native Client 11.0'}
 
         # create the connection
